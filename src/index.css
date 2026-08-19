@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Pinyon Script', 'Alex Brush', cursive;
+    --font-heading: 'Cinzel', serif;
+    --font-display: 'Cinzel Decorative', 'Italiana', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #332225;
+    background-color: #F4ECE1;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Typography Classes */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-script-luxury {
+  font-family: 'Pinyon Script', 'Great Vibes', cursive;
+}
+
+.font-script-modern {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-display-royal {
+  font-family: 'Cinzel Decorative', 'Italiana', serif;
+}
+
+.font-heading-caps {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.18em;
+}
+
+/* Luxury Royal Wedding Stationery Shapes & Effects */
+.paper-texture {
+  background-color: #F4ECE1;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(224, 185, 178, 0.45) 0%, transparent 65%),
+    radial-gradient(circle at 50% 85%, rgba(212, 175, 122, 0.35) 0%, transparent 65%),
+    radial-gradient(#c4a882 1px, transparent 1px), 
+    radial-gradient(#c4a882 1px, #F4ECE1 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+  background-position: 0 0, 0 0, 0 0, 14px 14px;
+}
+
+/* Royal Arch & Scalloped Wedding Card Silhouettes */
+.card-royal-arch {
+  background: #FAF3EB;
+  border: 1.5px solid rgba(212, 175, 122, 0.6);
+  border-radius: 4rem 4rem 1.5rem 1.5rem;
+  box-shadow: 
+    0 14px 38px -10px rgba(91, 26, 36, 0.1), 
+    0 6px 16px -2px rgba(212, 175, 122, 0.18),
+    inset 0 0 0 4px rgba(250, 243, 235, 0.9),
+    inset 0 0 0 5.5px rgba(212, 175, 122, 0.35);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-royal-arch:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 22px 48px -12px rgba(91, 26, 36, 0.16), 
+    0 10px 24px -2px rgba(212, 175, 122, 0.3),
+    inset 0 0 0 4px rgba(250, 243, 235, 0.95),
+    inset 0 0 0 5.5px rgba(212, 175, 122, 0.55);
+}
+
+.card-luxury {
+  background: #FAF3EB;
+  border: 1.5px solid rgba(212, 175, 122, 0.55);
+  border-radius: 2rem;
+  box-shadow: 0 12px 32px -10px rgba(91, 26, 36, 0.08), 0 4px 12px -2px rgba(212, 175, 122, 0.15);
+  position: relative;
+}
+
+.card-luxury-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px -10px rgba(91, 26, 36, 0.14), 0 8px 18px -2px rgba(212, 175, 122, 0.25);
+  border-color: rgba(212, 175, 122, 0.8);
+}
+
+/* Shimmering Animated Gold Name Effect */
+@keyframes shimmerGold {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #5B1A24 0%,
+    #8C2B3C 25%,
+    #C29B5D 50%,
+    #8C2B3C 75%,
+    #5B1A24 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGold 5s ease-in-out infinite;
+}
+
+.shimmer-gold-pure {
+  background: linear-gradient(
+    90deg,
+    #9B7036 0%,
+    #D4AF7A 25%,
+    #F7E5C3 50%,
+    #D4AF7A 75%,
+    #9B7036 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGold 4s ease-in-out infinite;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B38747 0%, #D4AF7A 50%, #9B7036 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C29B5D 0%, #E3C594 50%, #B88B4D 100%);
+}
+
+.wine-gradient-bg {
+  background: linear-gradient(135deg, #5B1A24 0%, #7A2837 50%, #451019 100%);
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 122, 0.4);
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8C5C8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C29B5D;
+}
+

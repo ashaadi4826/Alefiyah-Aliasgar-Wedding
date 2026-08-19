@@ -1,0 +1,6 @@
+{
+  "name": "Alefiyah Weds Aliasgar — Wedding Invitation",
+  "description": "Modern elegant mobile-first wedding invitation microsite for Alefiyah Weds Aliasgar, inspired by luxury stationery, rose Arabic calligraphy, and delicate gold floral details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

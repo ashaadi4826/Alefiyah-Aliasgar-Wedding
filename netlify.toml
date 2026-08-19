@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Aliases and redirects to consolidate RSVP function routes
+[[redirects]]
+  from = "/.netlify/functions/send-rsvp"
+  to = "/.netlify/functions/submit-rsvp"
+  status = 200
+
+[[redirects]]
+  from = "/api/send-rsvp"
+  to = "/.netlify/functions/submit-rsvp"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
