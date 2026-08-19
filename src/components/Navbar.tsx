@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, MapPin, Heart, Users, Phone, Clock } from 'lucide-react';
 import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
-import fallbackLogoImg from '../assets/images/wedding_logo_rose.png';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,19 +53,9 @@ export const Navbar: React.FC = () => {
             <div className="w-8 h-8 flex items-center justify-center">
               <img
                 src={logoRoseImg}
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (!target.src.includes('IMG_20260818_135503.png')) {
-                    target.src = '/IMG_20260818_135503.png';
-                  } else if (fallbackLogoImg && target.src !== fallbackLogoImg) {
-                    target.src = fallbackLogoImg;
-                  } else {
-                    target.src = '/wedding_logo_rose.png';
-                  }
-                }}
                 alt="Wedding Logo"
                 className="w-full h-full object-contain select-none"
-                referrerPolicy="no-referrer"
+                loading="eager"
               />
             </div>
             <div className="flex flex-col">
@@ -89,14 +78,14 @@ export const Navbar: React.FC = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-xs uppercase tracking-widest text-[#5C4549] hover:text-[#5B1A24] font-medium transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C29B5D] hover:after:w-full after:transition-all font-heading-caps"
+                className="text-xs uppercase tracking-[0.16em] font-heading-caps text-[#5B1A24] hover:text-[#B38747] font-semibold transition-colors duration-200"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Action Button & Mobile Menu Button */}
+          {/* Right Action: RSVP Pill & Mobile Menu Toggle */}
           <div className="flex items-center gap-3">
             <a
               href="#rsvp"
@@ -104,19 +93,18 @@ export const Navbar: React.FC = () => {
                 e.preventDefault();
                 handleNavClick('#rsvp');
               }}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-white bg-[#5B1A24] hover:bg-[#7A2837] transition-all shadow-xs uppercase font-heading-caps"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#5B1A24] hover:bg-[#451019] text-[#FAF7F2] text-xs font-heading-caps tracking-wider uppercase font-semibold transition-all shadow-sm"
             >
-              <Phone className="w-3 h-3 text-[#E3C594]" />
+              <Heart className="w-3 h-3 text-[#E3C594] fill-[#E3C594]" />
               <span>RSVP</span>
             </a>
 
             <button
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-[#5B1A24] hover:bg-[#E8C5C8]/20 focus:outline-none"
-              aria-label="Toggle Menu"
+              className="p-2 rounded-lg text-[#5B1A24] hover:bg-[#EADCCB]/50 transition-colors md:hidden"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -134,19 +122,9 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2">
                 <img
                   src={logoRoseImg}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (!target.src.includes('IMG_20260818_135503.png')) {
-                      target.src = '/IMG_20260818_135503.png';
-                    } else if (fallbackLogoImg && target.src !== fallbackLogoImg) {
-                      target.src = fallbackLogoImg;
-                    } else {
-                      target.src = '/wedding_logo_rose.png';
-                    }
-                  }}
                   alt="Wedding Logo"
                   className="w-7 h-7 object-contain select-none"
-                  referrerPolicy="no-referrer"
+                  loading="eager"
                 />
                 <span className="font-serif-luxury text-base font-semibold text-[#5B1A24]">
                   Alefiyah Weds Aliasgar
@@ -168,28 +146,13 @@ export const Navbar: React.FC = () => {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[#4A3236] hover:text-[#5B1A24] hover:bg-[#F4ECE1] transition-colors"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5B1A24] hover:bg-[#EADCCB]/40 transition-colors text-sm font-medium"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#F4ECE1] border border-[#E3C594]/50 flex items-center justify-center text-[#B38747]">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <span className="font-serif-luxury text-base">{item.label}</span>
+                    <Icon className="w-4 h-4 text-[#B38747]" />
+                    <span>{item.label}</span>
                   </a>
                 );
               })}
-            </div>
-
-            <div className="mt-4 pt-3 border-t border-[#E3C594]/30 flex gap-2">
-              <a
-                href="#rsvp"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('#rsvp');
-                }}
-                className="w-full text-center py-2.5 rounded-xl bg-[#5B1A24] text-white text-xs font-semibold tracking-wider uppercase font-heading-caps shadow-sm"
-              >
-                View RSVP Contacts
-              </a>
             </div>
           </div>
         </div>

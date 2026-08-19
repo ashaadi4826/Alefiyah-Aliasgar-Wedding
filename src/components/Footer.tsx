@@ -1,5 +1,5 @@
 import React from 'react';
-import logoRoseImg from '../assets/images/wedding_logo_rose.png';
+import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
 import { SubtleFloralDivider } from './FloralDecor';
 
 export const Footer: React.FC = () => {

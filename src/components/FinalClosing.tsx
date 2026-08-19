@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import logoRoseImg from '../assets/images/wedding_logo_rose.png';
+import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
 import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
 import { GoldFlourishDivider } from './FloralDecor';
 import { Heart, Sparkles } from 'lucide-react';
