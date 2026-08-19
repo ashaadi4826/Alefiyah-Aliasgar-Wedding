@@ -1,5 +1,4 @@
 import React from 'react';
-import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
 import { SubtleFloralDivider } from './FloralDecor';
 
 export const Footer: React.FC = () => {
@@ -9,16 +8,10 @@ export const Footer: React.FC = () => {
         {/* Logo directly on background as transparent standalone emblem */}
         <div className="w-16 h-16 mx-auto flex items-center justify-center">
           <img
-            src={logoRoseImg || '/IMG_20260818_135503.png'}
+            src="/IMG_20260818_135503.png"
             alt=""
             className="w-full h-full object-contain select-none"
             loading="eager"
-            onError={(e) => {
-              const target = e.currentTarget;
-              if (target.src !== window.location.origin + '/IMG_20260818_135503.png') {
-                target.src = '/IMG_20260818_135503.png';
-              }
-            }}
           />
         </div>
 
