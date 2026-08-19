@@ -1,4 +1,5 @@
 import React from 'react';
+import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 import { SubtleFloralDivider } from './FloralDecor';
 
 export const Footer: React.FC = () => {
@@ -8,7 +9,7 @@ export const Footer: React.FC = () => {
         {/* Logo directly on background as transparent standalone emblem */}
         <div className="w-16 h-16 mx-auto flex items-center justify-center">
           <img
-            src="/IMG_20260818_135503.png"
+            src={WEDDING_LOGO_SRC}
             alt=""
             className="w-full h-full object-contain select-none"
             loading="eager"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
 import { GoldFlourishDivider } from './FloralDecor';
 import { Heart } from 'lucide-react';
@@ -28,7 +29,7 @@ export const FinalClosing: React.FC = () => {
           {/* Rose Logo Asset - Transparent Standalone Wedding Emblem (No box) */}
           <div className="w-40 h-40 sm:w-52 sm:h-52 mx-auto flex items-center justify-center relative">
             <img
-              src="/IMG_20260818_135503.png"
+              src={WEDDING_LOGO_SRC}
               alt=""
               className="w-full h-full object-contain select-none transition-transform duration-500 hover:scale-105"
               loading="eager"

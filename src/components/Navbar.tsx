@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, MapPin, Heart, Users, Phone, Clock } from 'lucide-react';
+import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +52,7 @@ export const Navbar: React.FC = () => {
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <img
-                src="/IMG_20260818_135503.png"
+                src={WEDDING_LOGO_SRC}
                 alt=""
                 className="w-full h-full object-contain select-none"
                 loading="eager"
@@ -120,7 +121,7 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#E3C594]/40">
               <div className="flex items-center gap-2">
                 <img
-                  src="/IMG_20260818_135503.png"
+                  src={WEDDING_LOGO_SRC}
                   alt=""
                   className="w-7 h-7 object-contain select-none"
                   loading="eager"
