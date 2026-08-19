@@ -52,10 +52,16 @@ export const Navbar: React.FC = () => {
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <img
-                src={logoRoseImg}
-                alt="Wedding Logo"
+                src={logoRoseImg || '/IMG_20260818_135503.png'}
+                alt=""
                 className="w-full h-full object-contain select-none"
                 loading="eager"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== window.location.origin + '/IMG_20260818_135503.png') {
+                    target.src = '/IMG_20260818_135503.png';
+                  }
+                }}
               />
             </div>
             <div className="flex flex-col">
@@ -121,10 +127,16 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#E3C594]/40">
               <div className="flex items-center gap-2">
                 <img
-                  src={logoRoseImg}
-                  alt="Wedding Logo"
+                  src={logoRoseImg || '/IMG_20260818_135503.png'}
+                  alt=""
                   className="w-7 h-7 object-contain select-none"
                   loading="eager"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== window.location.origin + '/IMG_20260818_135503.png') {
+                      target.src = '/IMG_20260818_135503.png';
+                    }
+                  }}
                 />
                 <span className="font-serif-luxury text-base font-semibold text-[#5B1A24]">
                   Alefiyah Weds Aliasgar

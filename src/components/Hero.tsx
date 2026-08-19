@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ChevronDown } from 'lucide-react';
-import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
 import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
 import cornerFloralImg from '../assets/images/floral_corner_rose_1787042316490.jpg';
 import { GoldFlourishDivider, SubtleFloralDivider } from './FloralDecor';
@@ -89,10 +88,11 @@ export const Hero: React.FC = () => {
           >
             <div className="w-56 h-56 sm:w-72 sm:h-72 md:w-88 md:h-88 mx-auto flex items-center justify-center relative">
               <img
-                src={logoRoseImg}
-                alt="Alefiyah & Aliasgar Rose Calligraphy Wedding Logo"
+                src="/IMG_20260818_135503.png"
+                alt=""
                 className="w-full h-full object-contain select-none transition-transform duration-700 hover:scale-105"
                 loading="eager"
+                decoding="async"
               />
             </div>
           </motion.div>
