@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, MapPin, Heart, Users, Phone, Clock } from 'lucide-react';
-import logoRoseImg from '../assets/images/wedding_logo_rose.png';
+import logoRoseImg from '../assets/images/IMG_20260818_135503.png';
+import fallbackLogoImg from '../assets/images/wedding_logo_rose.png';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,6 +54,16 @@ export const Navbar: React.FC = () => {
             <div className="w-8 h-8 flex items-center justify-center">
               <img
                 src={logoRoseImg}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes('IMG_20260818_135503.png')) {
+                    target.src = '/IMG_20260818_135503.png';
+                  } else if (fallbackLogoImg && target.src !== fallbackLogoImg) {
+                    target.src = fallbackLogoImg;
+                  } else {
+                    target.src = '/wedding_logo_rose.png';
+                  }
+                }}
                 alt="Wedding Logo"
                 className="w-full h-full object-contain select-none"
                 referrerPolicy="no-referrer"
@@ -123,6 +134,16 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2">
                 <img
                   src={logoRoseImg}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('IMG_20260818_135503.png')) {
+                      target.src = '/IMG_20260818_135503.png';
+                    } else if (fallbackLogoImg && target.src !== fallbackLogoImg) {
+                      target.src = fallbackLogoImg;
+                    } else {
+                      target.src = '/wedding_logo_rose.png';
+                    }
+                  }}
                   alt="Wedding Logo"
                   className="w-7 h-7 object-contain select-none"
                   referrerPolicy="no-referrer"
