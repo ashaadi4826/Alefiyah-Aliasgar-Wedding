@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ChevronDown } from 'lucide-react';
 import weddingLogoImg from '../assets/images/IMG_20260818_135503.png';
@@ -6,7 +6,23 @@ import { IntertwinedHeartsDivider, SubtleFloralDivider } from './FloralDecor';
 import { FloatingRosePetals } from './FloatingRosePetals';
 import { BotanicalWatercolorDecor } from './BotanicalWatercolorDecor';
 
+// Fallback image sources in order of preference
+const LOGO_SOURCES = [
+  weddingLogoImg,
+  '/logo.png',
+  '/wedding_logo.png',
+  '/IMG_20260818_135503.png',
+  '/wedding_logo_rose.png'
+];
+
 export const Hero: React.FC = () => {
+  const [logoIndex, setLogoIndex] = useState(0);
+
+  const handleLogoError = () => {
+    if (logoIndex < LOGO_SOURCES.length - 1) {
+      setLogoIndex((prev) => prev + 1);
+    }
+  };
   return (
     <section
       id="hero"
@@ -47,16 +63,11 @@ export const Hero: React.FC = () => {
           >
             <div className="w-[155px] sm:w-[190px] md:w-[220px] aspect-square mx-auto flex items-center justify-center">
               <img
-                src={weddingLogoImg || '/IMG_20260818_135503.png'}
+                src={LOGO_SOURCES[logoIndex]}
                 alt="Alefiyah & Aliasgar Wedding Logo"
                 className="w-full h-full object-contain select-none transition-transform duration-700 hover:scale-105"
                 loading="eager"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src !== window.location.origin + '/IMG_20260818_135503.png') {
-                    target.src = '/IMG_20260818_135503.png';
-                  }
-                }}
+                onError={handleLogoError}
               />
             </div>
           </motion.div>
