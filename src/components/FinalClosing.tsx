@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
+import watercolorGarlandImg from '../assets/images/watercolor_garland_1787221704207.jpg';
 import { GoldFlourishDivider } from './FloralDecor';
 import { Heart } from 'lucide-react';
 
 export const FinalClosing: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 px-4 bg-[#F4ECE1] relative overflow-hidden paper-texture">
-      {/* Background floral framing */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-44 opacity-25 pointer-events-none select-none">
+    <section className="py-20 sm:py-28 px-4 bg-[#FAF5EE] relative overflow-hidden paper-texture">
+      {/* Background realistic watercolor floral garland */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-44 opacity-40 mix-blend-multiply pointer-events-none select-none">
         <img
-          src={floralBannerImg}
+          src={watercolorGarlandImg}
           alt=""
-          className="w-full h-full object-contain object-bottom scale-y-[-1]"
+          className="w-full h-full object-cover object-bottom scale-y-[-1]"
           referrerPolicy="no-referrer"
         />
       </div>
@@ -53,3 +53,4 @@ export const FinalClosing: React.FC = () => {
     </section>
   );
 };
+

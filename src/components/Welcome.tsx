@@ -1,23 +1,23 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { GoldFlourishDivider, SubtleFloralDivider } from './FloralDecor';
-import cornerFloralImg from '../assets/images/floral_corner_rose_1787042316490.jpg';
+import watercolorCornerImg from '../assets/images/watercolor_corner_spray_1787221676913.jpg';
 
 export const Welcome: React.FC = () => {
   return (
-    <section id="welcome" className="py-16 sm:py-24 px-4 bg-[#F4ECE1] relative overflow-hidden paper-texture">
-      {/* Decorative background accents */}
-      <div className="absolute top-0 right-0 w-36 sm:w-56 opacity-25 pointer-events-none select-none">
+    <section id="welcome" className="py-16 sm:py-24 px-4 bg-[#FAF5EE] relative overflow-hidden paper-texture">
+      {/* Decorative realistic watercolor background accents */}
+      <div className="absolute top-0 right-0 w-36 sm:w-56 opacity-40 mix-blend-multiply pointer-events-none select-none">
         <img
-          src={cornerFloralImg}
+          src={watercolorCornerImg}
           alt=""
           className="w-full h-auto object-contain"
           referrerPolicy="no-referrer"
         />
       </div>
-      <div className="absolute bottom-0 left-0 w-36 sm:w-56 opacity-25 pointer-events-none select-none scale-[-1]">
+      <div className="absolute bottom-0 left-0 w-36 sm:w-56 opacity-40 mix-blend-multiply pointer-events-none select-none scale-[-1]">
         <img
-          src={cornerFloralImg}
+          src={watercolorCornerImg}
           alt=""
           className="w-full h-auto object-contain"
           referrerPolicy="no-referrer"
@@ -35,7 +35,7 @@ export const Welcome: React.FC = () => {
         >
           {/* Top Royal Arch Filigree & Seal */}
           <div className="flex flex-col items-center mb-6">
-            <div className="w-12 h-12 rounded-full bg-[#F4ECE1] border-2 border-[#D4AF7A]/70 flex items-center justify-center shadow-xs text-[#B38747] mb-2">
+            <div className="w-12 h-12 rounded-full bg-[#FAF4ED] border-2 border-[#D4AF7A]/70 flex items-center justify-center shadow-xs text-[#B38747] mb-2">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="rgba(194, 155, 93, 0.25)" />
                 <circle cx="12" cy="12" r="2" fill="#B38747" />
@@ -71,4 +71,5 @@ export const Welcome: React.FC = () => {
     </section>
   );
 };
+
 
