@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, MapPin, Heart, Users, Phone, Clock } from 'lucide-react';
-import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,24 +47,14 @@ export const Navbar: React.FC = () => {
               e.preventDefault();
               handleNavClick('#hero');
             }}
-            className="flex items-center gap-2.5 group"
+            className="flex flex-col group"
           >
-            <div className="w-8 h-8 flex items-center justify-center">
-              <img
-                src={WEDDING_LOGO_SRC}
-                alt=""
-                className="w-full h-full object-contain select-none"
-                loading="eager"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif-luxury text-base sm:text-lg font-semibold tracking-wide text-[#5B1A24]">
-                Alefiyah Weds Aliasgar
-              </span>
-              <span className="text-[10px] uppercase tracking-wider text-[#5B1A24] font-bold -mt-0.5 font-heading-caps whitespace-nowrap">
-                24 — 26 Rabi al-Akhar 1448&nbsp;H · 6 — 8 Oct 2026
-              </span>
-            </div>
+            <span className="font-serif-luxury text-base sm:text-lg font-semibold tracking-wide text-[#5B1A24] group-hover:text-[#8C2839] transition-colors">
+              Alefiyah Weds Aliasgar
+            </span>
+            <span className="text-[10px] uppercase tracking-wider text-[#5B1A24] font-bold -mt-0.5 font-heading-caps whitespace-nowrap">
+              24 — 26 Rabi al-Akhar 1448&nbsp;H · 6 — 8 Oct 2026
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -119,17 +108,9 @@ export const Navbar: React.FC = () => {
           />
           <div className="fixed top-14 left-4 right-4 bg-[#FAF3EB] border border-[#E3C594]/80 rounded-2xl shadow-xl p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#E3C594]/40">
-              <div className="flex items-center gap-2">
-                <img
-                  src={WEDDING_LOGO_SRC}
-                  alt=""
-                  className="w-7 h-7 object-contain select-none"
-                  loading="eager"
-                />
-                <span className="font-serif-luxury text-base font-semibold text-[#5B1A24]">
-                  Alefiyah Weds Aliasgar
-                </span>
-              </div>
+              <span className="font-serif-luxury text-base font-semibold text-[#5B1A24]">
+                Alefiyah Weds Aliasgar
+              </span>
               <span className="text-[10px] font-heading-caps text-[#8C6228] font-bold whitespace-nowrap">
                 6 — 8 Oct 2026
               </span>

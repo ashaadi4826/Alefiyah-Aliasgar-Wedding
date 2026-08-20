@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
 import { GoldFlourishDivider } from './FloralDecor';
 import { Heart } from 'lucide-react';
@@ -26,16 +25,6 @@ export const FinalClosing: React.FC = () => {
           transition={{ duration: 1 }}
           className="card-royal-arch p-8 sm:p-14 relative overflow-hidden space-y-6"
         >
-          {/* Rose Logo Asset - Transparent Standalone Wedding Emblem (No box) */}
-          <div className="w-40 h-40 sm:w-52 sm:h-52 mx-auto flex items-center justify-center relative">
-            <img
-              src={WEDDING_LOGO_SRC}
-              alt=""
-              className="w-full h-full object-contain select-none transition-transform duration-500 hover:scale-105"
-              loading="eager"
-            />
-          </div>
-
           <div className="space-y-3">
             <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-medium text-[#5B1A24] tracking-wide">
               <span className="shimmer-gold font-semibold">Alefiyah</span>

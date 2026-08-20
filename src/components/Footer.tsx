@@ -1,21 +1,10 @@
 import React from 'react';
-import { WEDDING_LOGO_SRC } from '../assets/logoAsset';
 import { SubtleFloralDivider } from './FloralDecor';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="pt-12 pb-24 md:pb-12 px-4 bg-[#EDE3D5] border-t border-[#E3C594]/60 text-center relative overflow-hidden paper-texture">
       <div className="max-w-md mx-auto space-y-4">
-        {/* Logo directly on background as transparent standalone emblem */}
-        <div className="w-16 h-16 mx-auto flex items-center justify-center">
-          <img
-            src={WEDDING_LOGO_SRC}
-            alt=""
-            className="w-full h-full object-contain select-none"
-            loading="eager"
-          />
-        </div>
-
         <div>
           <h3 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#5B1A24] tracking-wide">
             Alefiyah Weds Aliasgar
