@@ -3,20 +3,13 @@ import { motion } from 'motion/react';
 import { Phone, MessageCircle, Heart } from 'lucide-react';
 import { RSVP_CONTACTS } from '../data/weddingData';
 import { GoldFlourishDivider } from './FloralDecor';
-import cornerFloralImg from '../assets/images/floral_corner_rose_1787042316490.jpg';
+import { BotanicalWatercolorDecor } from './BotanicalWatercolorDecor';
 
 export const RSVPSection: React.FC = () => {
   return (
-    <section id="rsvp" className="py-16 sm:py-24 px-4 bg-[#F4ECE1] relative overflow-hidden paper-texture">
-      {/* Corner floral elements */}
-      <div className="absolute top-0 right-0 w-36 sm:w-44 opacity-25 pointer-events-none select-none">
-        <img
-          src={cornerFloralImg}
-          alt=""
-          className="w-full h-auto object-contain scale-x-[-1]"
-          referrerPolicy="no-referrer"
-        />
-      </div>
+    <section id="rsvp" className="py-16 sm:py-24 px-4 relative overflow-hidden paper-texture">
+      {/* Soft Watercolor Pastel Background with Hand-Drawn Edge Botanicals */}
+      <BotanicalWatercolorDecor variant="rsvp" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Section Header */}
@@ -28,14 +21,14 @@ export const RSVPSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="space-y-3"
           >
-            <span className="font-heading-caps text-xs uppercase tracking-[0.25em] text-[#8C6228] font-bold">
+            <span className="font-heading-caps text-xs uppercase tracking-[0.25em] text-[#7A2837] font-bold">
               Kindly Respond
             </span>
-            <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#5B1A24] tracking-wide">
+            <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#451019] tracking-wide">
               RSVP
             </h2>
-            <p className="font-serif-luxury text-base sm:text-xl text-[#3D0B12] max-w-lg mx-auto italic font-medium">
-              &ldquo;For any assistance or further information, we would be delighted to help:.&rdquo;
+            <p className="font-serif-luxury text-base sm:text-xl text-[#24080D] max-w-lg mx-auto italic font-bold">
+              &ldquo;For any assistance or further information, we would be delighted to help:&rdquo;
             </p>
             <GoldFlourishDivider className="mt-3 max-w-xs" />
           </motion.div>
@@ -50,33 +43,33 @@ export const RSVPSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.15 }}
-              className="p-6 sm:p-8 rounded-3xl bg-[#EADCCB]/50 border border-[#D4AF7A]/70 text-center flex flex-col justify-between relative overflow-hidden shadow-[0_8px_24px_-6px_rgba(91,26,36,0.06)]"
+              className="p-6 sm:p-8 rounded-3xl bg-[#EFE3D5]/70 border border-[#D4AF7A] text-center flex flex-col justify-between relative overflow-hidden shadow-[0_8px_24px_-6px_rgba(91,26,36,0.08)]"
             >
               {/* Top gold emblem */}
-              <div className="w-7 h-7 rounded-full bg-[#F4ECE1] border border-[#D4AF7A] flex items-center justify-center text-[#B38747] mx-auto mb-2 shadow-2xs">
-                <Heart className="w-3.5 h-3.5 fill-[#B38747]/20 text-[#8C1D2F]" />
+              <div className="w-8 h-8 rounded-full bg-[#FAF4ED] border border-[#D4AF7A] flex items-center justify-center text-[#B38747] mx-auto mb-2 shadow-2xs">
+                <Heart className="w-4 h-4 fill-[#B38747] text-[#8C1D2F]" />
               </div>
 
               <div>
-                <span className="text-[11px] font-heading-caps uppercase tracking-wider text-[#8C6228] font-bold block">
+                <span className="text-[11px] font-heading-caps uppercase tracking-wider text-[#7A2837] font-bold block">
                   {contact.relation}
                 </span>
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#5B1A24] mt-0.5 mb-2">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#451019] mt-0.5 mb-2">
                   {contact.name}
                 </h3>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#3D0B12] hover:text-[#7A2837] tracking-wider transition-colors inline-block mb-4 underline decoration-[#D4AF7A]/60 underline-offset-4"
+                  className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#24080D] hover:text-[#7A2837] tracking-wider transition-colors inline-block mb-4 underline decoration-[#D4AF7A] underline-offset-4"
                 >
                   {contact.formattedPhone}
                 </a>
               </div>
 
               {/* Call and WhatsApp buttons */}
-              <div className="flex flex-col gap-2 pt-2 border-t border-[#E3C594]/60">
+              <div className="flex flex-col gap-2 pt-2 border-t border-[#D4AF7A]/60">
                 <a
                   href={`tel:${contact.phone}`}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#5B1A24] hover:bg-[#7A2837] text-[#FAF3EB] text-xs font-bold uppercase tracking-wider font-heading-caps transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#5B1A24] hover:bg-[#451019] text-[#FAF4ED] text-xs font-bold uppercase tracking-wider font-heading-caps transition-all shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-[#D4AF7A]" />
                   <span>CALL {contact.name.split(' ')[0].toUpperCase()}</span>
@@ -86,7 +79,7 @@ export const RSVPSection: React.FC = () => {
                   href={`https://wa.me/91${contact.phone}?text=${encodeURIComponent(contact.whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#F4ECE1] hover:bg-[#E8C5C8]/40 border border-[#D4AF7A] text-[#5B1A24] text-xs font-bold uppercase tracking-wider font-heading-caps transition-colors shadow-2xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#FAF4ED] hover:bg-[#EFE3D5] border border-[#D4AF7A] text-[#451019] text-xs font-bold uppercase tracking-wider font-heading-caps transition-colors shadow-2xs"
                 >
                   <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   <span>WhatsApp Message</span>

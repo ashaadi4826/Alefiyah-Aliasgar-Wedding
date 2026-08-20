@@ -1,63 +1,22 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ChevronDown } from 'lucide-react';
-import floralBannerImg from '../assets/images/envelope_floral_frame_1787042304335.jpg';
-import cornerFloralImg from '../assets/images/floral_corner_rose_1787042316490.jpg';
-import { GoldFlourishDivider, SubtleFloralDivider } from './FloralDecor';
+import weddingLogoImg from '../assets/images/IMG_20260818_135503.png';
+import { IntertwinedHeartsDivider, SubtleFloralDivider } from './FloralDecor';
 import { FloatingRosePetals } from './FloatingRosePetals';
+import { BotanicalWatercolorDecor } from './BotanicalWatercolorDecor';
 
 export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-between pt-16 sm:pt-20 pb-8 px-4 sm:px-6 overflow-hidden paper-texture bg-[#F4ECE1]"
+      className="relative min-h-screen flex flex-col items-center justify-between pt-16 sm:pt-20 pb-8 px-4 sm:px-6 overflow-hidden paper-texture"
     >
+      {/* Soft Watercolor Pastel Background with Hand-Drawn Edge Botanicals */}
+      <BotanicalWatercolorDecor variant="hero" />
+
       {/* Subtle Floating Rose Petals across the backdrop */}
-      <FloatingRosePetals count={14} className="z-0 opacity-75" />
-
-      {/* Background Floral Frame Accents */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 0.35, scale: 1 }}
-        transition={{ duration: 1.8, ease: "easeOut" }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-36 sm:h-48 pointer-events-none opacity-30 select-none overflow-hidden"
-      >
-        <img
-          src={floralBannerImg}
-          alt="Floral Frame Banner"
-          className="w-full h-full object-cover sm:object-contain object-top"
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-
-      {/* Subtle Corner Florals */}
-      <motion.div
-        initial={{ opacity: 0, x: -20, y: -20 }}
-        animate={{ opacity: 0.45, x: 0, y: 0 }}
-        transition={{ duration: 1.6, delay: 0.3 }}
-        className="absolute -top-4 -left-4 sm:top-2 sm:left-2 w-28 sm:w-44 pointer-events-none select-none"
-      >
-        <img
-          src={cornerFloralImg}
-          alt="Corner Floral Accent"
-          className="w-full h-auto object-contain"
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 20, y: -20 }}
-        animate={{ opacity: 0.45, x: 0, y: 0 }}
-        transition={{ duration: 1.6, delay: 0.3 }}
-        className="absolute -top-4 -right-4 sm:top-2 sm:right-2 w-28 sm:w-44 pointer-events-none select-none scale-x-[-1]"
-      >
-        <img
-          src={cornerFloralImg}
-          alt="Corner Floral Accent"
-          className="w-full h-auto object-contain"
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
+      <FloatingRosePetals count={10} className="z-0 opacity-60" />
 
       {/* Main Royal Wedding Presentation - Continuous Soft Pastel Canvas */}
       <div className="w-full max-w-3xl my-auto flex flex-col items-center text-center relative z-10 py-4 sm:py-8">
@@ -72,53 +31,83 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#EADCCB]/80 border border-[#D4AF7A]/60 text-[#8C6228] text-xs sm:text-sm tracking-[0.22em] uppercase font-heading-caps font-bold mb-4 sm:mb-6 shadow-2xs backdrop-blur-xs relative z-10"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#EFE3D5] border border-[#D4AF7A]/70 text-[#7A2837] text-xs sm:text-sm tracking-[0.22em] uppercase font-heading-caps font-bold mb-3 sm:mb-4 shadow-2xs backdrop-blur-xs relative z-10"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#B38747]" />
             <span>The wedding celebration</span>
             <Sparkles className="w-3.5 h-3.5 text-[#B38747]" />
           </motion.div>
 
-          {/* 2. Alefiyah Weds Aliasgar with Luxury Shaded Wedding Typography */}
+          {/* 2. Uploaded Wedding Logo - Centered Directly Above Names (140-170px wide on mobile) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="relative mx-auto mb-4 sm:mb-5 z-10 flex items-center justify-center"
+          >
+            <div className="w-[155px] sm:w-[190px] md:w-[220px] aspect-square mx-auto flex items-center justify-center">
+              <img
+                src={weddingLogoImg || '/IMG_20260818_135503.png'}
+                alt="Alefiyah & Aliasgar Wedding Logo"
+                className="w-full h-full object-contain select-none transition-transform duration-700 hover:scale-105"
+                loading="eager"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== window.location.origin + '/IMG_20260818_135503.png') {
+                    target.src = '/IMG_20260818_135503.png';
+                  }
+                }}
+              />
+            </div>
+          </motion.div>
+
+          {/* 3. Directly Below Logo: Alefiyah Weds Aliasgar with Cohesive Flowing Script & Shaded Effect */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className="w-full text-center my-3 sm:my-4 px-2"
+            transition={{ duration: 1.2, delay: 0.4 }}
+            className="w-full text-center my-2 sm:my-3 px-2"
           >
-            <h1 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide text-[#5B1A24] leading-tight drop-shadow-[0_2px_8px_rgba(91,26,36,0.14)]">
-              <span className="shimmer-gold">Alefiyah</span>
-              <span className="font-script-luxury text-3xl sm:text-5xl md:text-6xl text-[#B38747] font-normal mx-2 sm:mx-3 inline-block -rotate-2">
+            <h1 className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 leading-tight drop-shadow-[0_2px_8px_rgba(91,26,36,0.16)]">
+              {/* Alefiyah - Flowing script focal point */}
+              <span className="font-script-luxury text-4xl sm:text-6xl md:text-7xl font-bold shimmer-gold inline-block tracking-wide py-1">
+                Alefiyah
+              </span>
+
+              {/* Weds - Slightly smaller, delicate complementary cursive */}
+              <span className="font-script-modern text-2xl sm:text-4xl md:text-5xl text-[#B38747] font-semibold mx-1 sm:mx-2 inline-block -rotate-2">
                 Weds
               </span>
-              <span className="shimmer-gold">Aliasgar</span>
-            </h1>
 
-            {/* Subtle Gold Underline Flourish */}
-            <div className="w-28 sm:w-40 h-[1.5px] bg-gradient-to-r from-transparent via-[#C29B5D] to-transparent mx-auto mt-2 opacity-80" />
+              {/* Aliasgar - Flowing script focal point */}
+              <span className="font-script-luxury text-4xl sm:text-6xl md:text-7xl font-bold shimmer-gold inline-block tracking-wide py-1">
+                Aliasgar
+              </span>
+            </h1>
           </motion.div>
 
-          <GoldFlourishDivider className="my-4 sm:my-6 max-w-sm" />
+          {/* Single thin decorative line with delicate intertwined-heart ornament in center */}
+          <IntertwinedHeartsDivider className="my-4 sm:my-5" />
 
-          {/* 4. Sacred Benediction / Dua Inscription - Direct on Continuous Soft Canvas */}
-          <div className="max-w-2xl mx-auto my-3 px-3 sm:px-6">
-            <p className="font-serif-luxury text-sm sm:text-base md:text-lg text-[#451019] leading-relaxed sm:leading-loose font-medium italic tracking-wide">
+          {/* 4. Sacred Benediction / Dua Inscription - Enhanced Contrast and Readability */}
+          <div className="max-w-2xl mx-auto my-2 px-3 sm:px-6">
+            <p className="font-serif-luxury text-sm sm:text-base md:text-lg text-[#3B0A12] leading-relaxed sm:leading-loose font-semibold italic tracking-wide">
               By the Grace of Allah Ta&apos;ala, Vasila-e-Panjatan Pak (A.S.), Aimmat Taherein (A.S.), Immam-uz-Zamaan (A.S.), Duat Mutalaqin (R.A.), Syedna Moahmmed Burhanuddin (R.A.), and with the kind benedictions of Syedna Aali Qadar Mufaddal Saifuddin (T.U.S.)
             </p>
           </div>
 
           <SubtleFloralDivider className="my-3 sm:my-4 w-28 mx-auto" />
 
-          {/* 5. Host Parents */}
+          {/* 5. Host Parents - High Readability Bold Royal Typography */}
           <div className="my-2 sm:my-3 space-y-1">
-            <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-bold text-[#5B1A24] tracking-wide">
+            <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-bold text-[#451019] tracking-wide">
               Mr Taher &amp; Mrs Rashida Tinwala
             </h2>
           </div>
 
-          {/* 6. Cordial Invitation Request */}
+          {/* 6. Cordial Invitation Request - Stronger Contrast and Font Weight for Mobile */}
           <div className="my-3 sm:my-4 max-w-2xl mx-auto px-3 sm:px-6">
-            <p className="font-serif-luxury text-base sm:text-xl md:text-2xl text-[#2A080E] leading-relaxed sm:leading-loose font-normal">
+            <p className="font-serif-luxury text-base sm:text-xl md:text-2xl text-[#24080D] leading-relaxed sm:leading-loose font-medium">
               Cordially invite you and request the honor of your gracious presence on the auspicious occasion of the Wedding Ceremony of our daughter.
             </p>
           </div>
@@ -138,9 +127,9 @@ export const Hero: React.FC = () => {
             e.preventDefault();
             document.querySelector('#countdown')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="group inline-flex flex-col items-center gap-1 text-[#8C6228] hover:text-[#5B1A24] transition-colors"
+          className="group inline-flex flex-col items-center gap-1 text-[#6B1B29] hover:text-[#451019] transition-colors"
         >
-          <span className="font-heading-caps text-[11px] sm:text-xs tracking-[0.2em] uppercase font-medium">
+          <span className="font-heading-caps text-[11px] sm:text-xs tracking-[0.2em] uppercase font-bold">
             Scroll to celebrations
           </span>
           <motion.div
