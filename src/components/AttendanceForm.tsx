@@ -6,6 +6,7 @@ import { RSVPFormData } from '../types';
 const STORAGE_KEY = 'wedding_rsvp_alefiyah_aliasgar';
 
 const EVENT_OPTIONS = [
+  'Manek Stambh & Mandwo',
   'Mehendi',
   'Mithi Shitabi & Jaman',
   'Katha ni Rasam',
@@ -19,6 +20,10 @@ interface EventDateInfo {
 }
 
 const EVENT_DATES: Record<string, EventDateInfo> = {
+  'Manek Stambh & Mandwo': {
+    hijri: '24 Rabi al-Akhar 1448\u00A0H',
+    gregorianWithDay: '6 October 2026 · Tuesday',
+  },
   'Mehendi': {
     hijri: '24 Rabi al-Akhar 1448\u00A0H',
     gregorianWithDay: '6 October 2026 · Tuesday',
@@ -54,6 +59,7 @@ export const AttendanceForm: React.FC = () => {
     mobileNumber: '',
     attendingCount: 1,
     eventsAttending: [
+      'Manek Stambh & Mandwo',
       'Mehendi',
       'Mithi Shitabi & Jaman',
       'Katha ni Rasam',

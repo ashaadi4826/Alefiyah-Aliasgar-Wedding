@@ -8,6 +8,7 @@ import { BotanicalWatercolorDecor, CardWatercolorDecor, CardAccentTheme } from '
 // Helper to format event titles in beautiful title case for luxury calligraphy display
 const formatEventTitle = (rawTitle: string): string => {
   const map: Record<string, string> = {
+    'MANEK STAMBH & MANDWO': 'Manek Stambh & Mandwo',
     'MEHENDI': 'Mehendi',
     'MITHI SHITABI & JAMAN': 'Mithi Shitabi & Jaman',
     'KATHA NI RASAM': 'Katha ni Rasam',
@@ -19,6 +20,7 @@ const formatEventTitle = (rawTitle: string): string => {
 
 // Map each event to a tailored pastel botanical theme
 const EVENT_CARD_THEMES: CardAccentTheme[] = [
+  'sage-gold',       // Manek Stambh & Mandwo
   'blush-sage',      // Mehendi
   'peach-lavender',  // Mithi Shitabi & Jaman
   'champagne-blush', // Katha ni Rasam

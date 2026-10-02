@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ChevronDown } from 'lucide-react';
-import weddingLogoImg from '../assets/images/IMG_20260818_135503.png';
+import weddingLogoImg from '../assets/images/wedding_logo.png';
 import { IntertwinedHeartsDivider, SubtleFloralDivider } from './FloralDecor';
 import { FloatingRosePetals } from './FloatingRosePetals';
 import { BotanicalWatercolorDecor } from './BotanicalWatercolorDecor';
@@ -45,12 +45,13 @@ export const Hero: React.FC = () => {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="relative mx-auto mb-4 sm:mb-5 z-10 flex items-center justify-center"
           >
-            <div className="w-[155px] sm:w-[190px] md:w-[220px] aspect-square mx-auto flex items-center justify-center">
+            <div className="w-[165px] sm:w-[200px] md:w-[230px] aspect-square mx-auto flex items-center justify-center">
               <img
                 src={weddingLogoImg}
                 alt="Alefiyah & Aliasgar Wedding Logo"
                 className="w-full h-full object-contain select-none transition-transform duration-700 hover:scale-105"
                 loading="eager"
+                referrerPolicy="no-referrer"
               />
             </div>
           </motion.div>

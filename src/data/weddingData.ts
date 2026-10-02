@@ -9,10 +9,21 @@ export const COUPLE = {
   hijriDatesText: "24 — 26 Rabi al-Akhar 1448\u00A0H",
   hijriYear: "1448\u00A0H",
   location: "Rajkot, Gujarat",
-  targetDate: new Date('2026-10-06T16:00:00+05:30'), // Mehendi / Wedding start date 6 October 2026
+  targetDate: new Date('2026-10-06T13:52:00+05:30'), // Manek Stambh & Mandwo / Wedding start date 6 October 2026
 };
 
 export const WEDDING_EVENTS: WeddingEvent[] = [
+  {
+    id: 'manek-stambh-mandwo',
+    title: 'MANEK STAMBH & MANDWO',
+    hijriDate: '24 Rabi al-Akhar 1448\u00A0H',
+    gregorianDate: '6 October 2026',
+    dayOfWeek: 'Tuesday',
+    time: '01:52 PM onwards',
+    venueName: 'Home Residency',
+    venueDetail: 'Rajkot, Gujarat',
+    description: 'Manek Stambh invites divine grace,\nMandwo will brighten up our space.',
+  },
   {
     id: 'mehendi',
     title: 'MEHENDI',
@@ -142,9 +153,9 @@ export const RSVP_CONTACTS = [
 ];
 
 export const HOME_LOCATION = {
-  title: 'Our Home',
+  title: 'Home Residency',
   address: '201 Maimoon Apartment, Sadar Bazar, Rajkot',
   city: 'Rajkot, Gujarat',
   directionsUrl: 'https://share.google/rSs5HQDFTbsrz5eBF',
-  note: 'Family residence for visiting and warm welcomes',
+  note: 'Venue for Manek Stambh & Mandwo and family residence',
 };
